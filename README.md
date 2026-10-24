@@ -1,5 +1,8 @@
 # AnyController
 
+[![Build](https://github.com/BallerIsLeet/AnyController/actions/workflows/build.yml/badge.svg)](https://github.com/BallerIsLeet/AnyController/actions/workflows/build.yml)
+[![Latest release](https://img.shields.io/github/v/release/BallerIsLeet/AnyController)](https://github.com/BallerIsLeet/AnyController/releases/latest)
+
 Use non-PlayStation controllers on a jailbroken PS5. AnyController is an ELF payload that reads a USB controller and registers it with the PS5 as a **virtual DualSense**, so the whole system sees a normal DualSense. That includes the home screen, the user picker, the PS button menu and every game, with no game patching.
 
 ## Supported controllers
@@ -21,14 +24,18 @@ Tested on PS5 firmware **13.60**.
 - A jailbroken PS5 running an ELF loader that accepts payloads on port 9021, such as [elfldr](https://github.com/ps5-payload-dev/elfldr).
 - The controller plugged into one of the PS5's USB ports (or its dongle, for wireless pads).
 
+## Download
+
+Get `anycontroller.elf` from the **[latest release](https://github.com/BallerIsLeet/AnyController/releases/latest)**. No toolchain is needed. Each release also has a `SHA256SUMS` file to verify the download, and an `anycontroller.elf.json` for Payload Manager.
+
 ## Usage
 
-1. Build `anycontroller.elf` (see [Building](#building)).
-2. Send it to the console:
+1. Send the payload to the console with any payload sender, or with the script in this repo:
    ```bash
    python3 send_payload.py <PS5_IP> anycontroller.elf
    ```
-3. A notification says AnyController is running. Plug in the controller. You'll get a "connected as DualSense" notification and the user picker, the same as with a real DualSense.
+   With Payload Manager, copy `anycontroller.elf` and `anycontroller.elf.json` into `/data/pldmgr/payloads/anycontroller/` and launch it from there.
+2. A notification says AnyController is running. Plug in the controller. You'll get a "connected as DualSense" notification and the user picker, the same as with a real DualSense.
 
 Sending the payload again replaces the copy that's already running.
 
@@ -63,6 +70,17 @@ make send PS5_HOST=<PS5_IP>
 ```
 
 On Windows, `build_ps5.sh` runs the same build from WSL.
+
+### Releasing
+
+Every push to `main` is built by the [Build workflow](.github/workflows/build.yml), and the ELF is attached to the run as an artifact. To publish a release, bump the version in [`include/anycontroller.h`](include/anycontroller.h), commit, then push a matching tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The [Release workflow](.github/workflows/release.yml) builds the payload and publishes a GitHub release with the ELF, checksums and Payload Manager metadata. It refuses to publish if the tag doesn't match the version in the header.
 
 ## How it works
 

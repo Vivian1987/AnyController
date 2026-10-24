@@ -1,7 +1,12 @@
-# AnyController
+<p align="center">
+  <img src="docs/banner.svg" width="100%" alt="AnyController: Switch Pro and Xbox controllers on PS5, recognized as a real DualSense">
+</p>
 
-[![Build](https://github.com/BallerIsLeet/AnyController/actions/workflows/build.yml/badge.svg)](https://github.com/BallerIsLeet/AnyController/actions/workflows/build.yml)
-[![Latest release](https://img.shields.io/github/v/release/BallerIsLeet/AnyController)](https://github.com/BallerIsLeet/AnyController/releases/latest)
+<p align="center">
+  <a href="https://github.com/BallerIsLeet/AnyController/releases/latest"><img src="https://img.shields.io/github/v/release/BallerIsLeet/AnyController" alt="Latest release"></a>
+  <a href="https://github.com/BallerIsLeet/AnyController/actions/workflows/build.yml"><img src="https://github.com/BallerIsLeet/AnyController/actions/workflows/build.yml/badge.svg" alt="Build"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/BallerIsLeet/AnyController" alt="License: GPL-3.0"></a>
+</p>
 
 Use non-PlayStation controllers on a jailbroken PS5. AnyController is an ELF payload that reads a USB controller and registers it with the PS5 as a **virtual DualSense**, so the whole system sees a normal DualSense. That includes the home screen, the user picker, the PS button menu and every game, with no game patching.
 
@@ -43,6 +48,10 @@ Sending the payload again replaces the copy that's already running.
 
 Buttons are mapped **by position**, so the bottom face button is always Cross:
 
+<p align="center">
+  <img src="docs/button-mapping.svg" width="100%" alt="Switch Pro B, A, Y, X and Xbox A, B, X, Y map by position to Cross, Circle, Square and Triangle">
+</p>
+
 | PS5 | Switch Pro | Xbox / XInput |
 |---|---|---|
 | Cross ✕ | B | A |
@@ -83,6 +92,10 @@ git push origin v0.1.0
 The [Release workflow](.github/workflows/release.yml) builds the payload and publishes a GitHub release with the ELF, checksums and Payload Manager metadata. It refuses to publish if the tag doesn't match the version in the header.
 
 ## How it works
+
+<p align="center">
+  <img src="docs/how-it-works.svg" width="100%" alt="Controller, then USB access through ugen, then a driver, then the /dev/hid virtual pad, then the PS5 sees a DualSense">
+</p>
 
 - **Virtual DualSense:** `/dev/hid` accepts three ioctls (add device, insert input, delete device) that libScePad uses for virtual pads, and it doesn't check who is calling. A payload can register a pad the kernel treats as a real DualSense. Interface discovered by [FGG-XSense](https://github.com/FGGstore/FGG-XSense). See [`src/vpad.c`](src/vpad.c).
 - **USB access:** the PS5 has no `uhid` device. Controllers appear only as FreeBSD `ugen` nodes (`/dev/usb/B.A.E`). AnyController identifies devices by their USB descriptor, detaches Sony's HID driver, claims the interface and reads reports from the interrupt endpoints. See [`src/transport/usb.c`](src/transport/usb.c).

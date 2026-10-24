@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 380" width="1280" height="380" role="img" aria-labelledby="t d">
+  <title id="t">Button mapping by position</title>
+  <desc id="d">Face buttons map by position. Switch Pro: B is Cross, A is Circle, Y is Square, X is Triangle. Xbox: A is Cross, B is Circle, X is Square, Y is Triangle.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4C86FF"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="380" rx="24" fill="#0A1022"/>
+  <rect x="0.5" y="0.5" width="1279" height="379" rx="24" fill="none" stroke="#1B2742"/>
+  <circle cx="640" cy="170" r="128" fill="#12224A"/>
+
+  <g font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif">
+    <!-- Switch Pro: X top, A right, B bottom, Y left -->
+    <g fill="#1A2240" stroke="#33416B" stroke-width="2">
+      <circle cx="250" cy="106" r="30"/>
+      <circle cx="314" cy="170" r="30"/>
+      <circle cx="250" cy="234" r="30"/>
+      <circle cx="186" cy="170" r="30"/>
+    </g>
+    <g fill="#E8EEFF" font-size="26" font-weight="700" text-anchor="middle">
+      <text x="250" y="115">X</text>
+      <text x="314" y="179">A</text>
+      <text x="250" y="243">B</text>
+      <text x="186" y="179">Y</text>
+    </g>
+
+    <!-- PlayStation: triangle, circle, cross, square -->
+    <g fill="#1A2240" stroke="#33416B" stroke-width="2">
+      <circle cx="640" cy="106" r="30"/>
+      <circle cx="704" cy="170" r="30"/>
+      <circle cx="640" cy="234" r="30"/>
+      <circle cx="576" cy="170" r="30"/>
+    </g>
+    <g fill="none" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M640,93 L653,115 L627,115 Z" stroke="#4FD1B5"/>
+      <circle cx="704" cy="170" r="11" stroke="#FF5C6C"/>
+      <path d="M630,224 L650,244 M650,224 L630,244" stroke="#7DA8FF"/>
+      <rect x="566" y="160" width="20" height="20" stroke="#F08BD0"/>
+    </g>
+
+    <!-- Xbox: Y top, B right, A bottom, X left -->
+    <g fill="#1A2240" stroke-width="2.5">
+      <circle cx="1030" cy="106" r="30" stroke="#F2C230"/>
+      <circle cx="1094" cy="170" r="30" stroke="#FF5C6C"/>
+      <circle cx="1030" cy="234" r="30" stroke="#4CD964"/>
+      <circle cx="966" cy="170" r="30" stroke="#4C9BFF"/>
+    </g>
+    <g font-size="26" font-weight="700" text-anchor="middle">
+      <text x="1030" y="115" fill="#F2C230">Y</text>
+      <text x="1094" y="179" fill="#FF5C6C">B</text>
+      <text x="1030" y="243" fill="#4CD964">A</text>
+      <text x="966" y="179" fill="#4C9BFF">X</text>
+    </g>
+
+    <g stroke="#4C86FF" stroke-width="3" marker-end="url(#arrow)">
+      <line x1="364" y1="170" x2="500" y2="170"/>
+      <line x1="916" y1="170" x2="780" y2="170"/>
+    </g>
+
+    <g font-size="20" font-weight="700" fill="#F2F5FF" text-anchor="middle">
+      <text x="250" y="304">Switch Pro</text>
+      <text x="640" y="304">PS5</text>
+      <text x="1030" y="304">Xbox / XInput</text>
+    </g>
+    <text x="640" y="346" font-size="16" fill="#AEBADB" text-anchor="middle">Mapped by position: the bottom button is always Cross, the right one always Circle.</text>
+  </g>
+</svg>

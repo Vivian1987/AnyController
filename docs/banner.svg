@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-labelledby="t d">
+  <title id="t">AnyController</title>
+  <desc id="d">A Switch Pro Controller and an Xbox controller feeding into a DualSense: non-PlayStation controllers recognized by the PS5 as a real DualSense.</desc>
+  <defs>
+    <radialGradient id="glow" cx="1090" cy="230" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E4FD8" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#1E4FD8" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4C86FF"/>
+    </marker>
+    <path id="pad" d="M-78,-58 C-112,-58 -128,-36 -136,-2 L-152,74 C-159,106 -131,122 -110,100 L-80,64 L80,64 L110,100 C131,122 159,106 152,74 L136,-2 C128,-36 112,-58 78,-58 Z"/>
+  </defs>
+
+  <rect width="1280" height="440" rx="24" fill="#0A1022"/>
+  <rect width="1280" height="440" rx="24" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="1279" height="439" rx="24" fill="none" stroke="#1B2742"/>
+
+  <g font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif">
+    <text x="72" y="140" fill="#6F86C9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="2.5">PS5 PAYLOAD · FIRMWARE 13.60</text>
+    <text x="70" y="214" fill="#F2F5FF" font-size="72" font-weight="700" letter-spacing="-1.5">AnyController</text>
+    <text x="72" y="266" fill="#B8C4E3" font-size="24">Switch Pro and Xbox controllers on PS5,</text>
+    <text x="72" y="300" fill="#B8C4E3" font-size="24">recognized as a real DualSense.</text>
+
+    <g font-size="14" fill="#A9B8E0">
+      <rect x="72" y="334" width="56" height="30" rx="15" fill="#141D36" stroke="#24325A"/>
+      <text x="100" y="354" text-anchor="middle">USB</text>
+      <rect x="138" y="334" width="128" height="30" rx="15" fill="#141D36" stroke="#24325A"/>
+      <text x="202" y="354" text-anchor="middle">2.4GHz dongle</text>
+      <rect x="276" y="334" width="140" height="30" rx="15" fill="#141D36" stroke="#24325A"/>
+      <text x="346" y="354" text-anchor="middle">Up to 4 players</text>
+      <rect x="426" y="334" width="100" height="30" rx="15" fill="#141D36" stroke="#24325A"/>
+      <text x="476" y="354" text-anchor="middle">PS button</text>
+    </g>
+
+    <!-- Switch Pro Controller -->
+    <g transform="translate(760 130) scale(0.6)">
+      <use href="#pad" fill="#2B2F38" stroke="#434A5C" stroke-width="3"/>
+      <circle cx="-100" cy="-8" r="21" fill="#191C23" stroke="#4A5163" stroke-width="3"/>
+      <circle cx="40" cy="34" r="21" fill="#191C23" stroke="#4A5163" stroke-width="3"/>
+      <path d="M-46,16 L-34,16 L-34,28 L-22,28 L-22,40 L-34,40 L-34,52 L-46,52 L-46,40 L-58,40 L-58,28 L-46,28 Z" fill="#4A5163"/>
+      <circle cx="100" cy="-26" r="9" fill="#4A5163"/>
+      <circle cx="118" cy="-8" r="9" fill="#4A5163"/>
+      <circle cx="100" cy="10" r="9" fill="#4A5163"/>
+      <circle cx="82" cy="-8" r="9" fill="#4A5163"/>
+      <rect x="-30" y="-32" width="10" height="10" rx="2" fill="#4A5163"/>
+      <circle cx="25" cy="-27" r="7" fill="#191C23" stroke="#6B7489" stroke-width="2"/>
+    </g>
+    <circle cx="700" cy="226" r="5" fill="#E4002B"/>
+    <text x="712" y="231" fill="#C9D3EE" font-size="15">Switch Pro · USB</text>
+
+    <!-- Xbox / XInput controller -->
+    <g transform="translate(760 300) scale(0.6)">
+      <use href="#pad" fill="#2B2F38" stroke="#434A5C" stroke-width="3"/>
+      <circle cx="-100" cy="-8" r="21" fill="#191C23" stroke="#4A5163" stroke-width="3"/>
+      <circle cx="40" cy="34" r="21" fill="#191C23" stroke="#4A5163" stroke-width="3"/>
+      <path d="M-46,16 L-34,16 L-34,28 L-22,28 L-22,40 L-34,40 L-34,52 L-46,52 L-46,40 L-58,40 L-58,28 L-46,28 Z" fill="#4A5163"/>
+      <circle cx="100" cy="-26" r="9" fill="#F2C230"/>
+      <circle cx="118" cy="-8" r="9" fill="#FF5C6C"/>
+      <circle cx="100" cy="10" r="9" fill="#4CD964"/>
+      <circle cx="82" cy="-8" r="9" fill="#4C9BFF"/>
+      <circle cx="0" cy="-30" r="11" fill="#3DBA3D"/>
+    </g>
+    <circle cx="684" cy="396" r="5" fill="#3DBA3D"/>
+    <text x="696" y="401" fill="#C9D3EE" font-size="15">Xbox / XInput · USB, 2.4GHz</text>
+
+    <!-- arrows into the virtual DualSense -->
+    <path d="M862,140 C905,140 910,196 948,206" fill="none" stroke="#4C86FF" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M862,300 C905,300 910,254 948,244" fill="none" stroke="#4C86FF" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <!-- DualSense -->
+    <g transform="translate(1100 215) scale(0.92)">
+      <use href="#pad" fill="#EEF1F6" stroke="#C7CEDB" stroke-width="2"/>
+      <rect x="-60" y="-56" width="120" height="58" rx="12" fill="#1A1D24" stroke="#3E86FF" stroke-width="3"/>
+      <rect x="-58" y="8" width="116" height="52" rx="20" fill="#1A1D24"/>
+      <circle cx="-32" cy="34" r="17" fill="#2A2E37" stroke="#4A5060" stroke-width="2"/>
+      <circle cx="32" cy="34" r="17" fill="#2A2E37" stroke="#4A5060" stroke-width="2"/>
+      <circle cx="0" cy="20" r="5" fill="#3E86FF"/>
+      <path d="M-106,-24 L-94,-24 L-94,-12 L-82,-12 L-82,0 L-94,0 L-94,12 L-106,12 L-106,0 L-118,0 L-118,-12 L-106,-12 Z" fill="#C3CAD7"/>
+      <circle cx="100" cy="-24" r="8" fill="#C3CAD7"/>
+      <circle cx="118" cy="-6" r="8" fill="#C3CAD7"/>
+      <circle cx="100" cy="12" r="8" fill="#C3CAD7"/>
+      <circle cx="82" cy="-6" r="8" fill="#C3CAD7"/>
+    </g>
+    <text x="1100" y="360" fill="#C9D3EE" font-size="16" text-anchor="middle">Seen by the PS5 as a DualSense</text>
+  </g>
+</svg>
